@@ -1,0 +1,7 @@
+Export arrays into file.
+file organization, append file, edit file, delete from file. 
+
+next projects: 
+simple vector operations.
+matrix generator.
+vector-matrix operations.
