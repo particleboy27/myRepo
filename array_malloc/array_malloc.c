@@ -43,29 +43,9 @@ void main(){
     //printf("outscanmode is %d\n", out_scanmode);
 
     if(out_scanmode == 0){
+        array_edit = 0;
         
-        printf("Please Enter the index.\nMax Index: %d\n", size - 1);
-
-        while((c = getchar()) != '\n' && c != EOF){}   
-        scanf("%d", &index);
-
-        _comparator = size_index_comparator(&size, &index);
-
-        while(_comparator != 1){
-        printf("Please RE-enter the index.\nMax Index: %d\n", size - 1);
-        while((c = getchar()) != '\n' && c != EOF){}   
-        scanf("%d", &index);
-        _comparator = size_index_comparator(&size, &index);
-        }
-
-        local_fill(dynamic_array, &index, &size);  
-        
-        printf("Do you want to insert another Element at a certain index in the array?\n");
-        printf("Type Y or N\n");       
-        
-        while((c = getchar()) != '\n' && c != EOF){}                //flush stdin
-        array_edit = fgetc(stdin);
-        while(array_edit == 'y'||array_edit == 'Y'){
+        while(array_edit == 'y'|| array_edit == 'Y' || array_edit == 0){
             printf("Please Enter the index.\nMax Index: %d\n", size - 1);
 
             while((c = getchar()) != '\n' && c != EOF){}   
