@@ -4,8 +4,8 @@
 
 int scan_mode(char);
 int size_index_comparator(int*, int*);
-void sequence_fill(int*);
-void local_fill(int*, int*);
+void sequence_fill(int*, int*);
+void local_fill(int*, int*, int*);
 
 void main(){
     int size, index, out_scanmode, n_i, _comparator;                                 
@@ -17,12 +17,12 @@ void main(){
     
     int *dynamic_array = malloc(size*(sizeof(int)));            //allocate piece of memory for my array
     
-    printf("Here is your array!\n");
+    //printf("Here is your array!\n");
     printf("All Elements of the array has now been set to zero\n");
 
     for(int index = 0; index < size; index++){                  //make every element of the array zero
         dynamic_array[index] = 0;
-        printf("[%d]\n", dynamic_array[index]);
+        //printf("[%d]\n", dynamic_array[index]);
     }
     
     printf("Please Choose mode: Fill local or Fill sequence.\n");
@@ -58,7 +58,7 @@ void main(){
         _comparator = size_index_comparator(&size, &index);
         }
 
-        local_fill(dynamic_array, &index);  
+        local_fill(dynamic_array, &index, &size);  
         
         printf("Do you want to insert another Element at a certain index in the array?\n");
         printf("Type Y or N\n");       
@@ -80,7 +80,7 @@ void main(){
             _comparator = size_index_comparator(&size, &index);
             }
 
-            local_fill(dynamic_array, &index);  
+            local_fill(dynamic_array, &index, &size);  
         
             printf("Do you want to insert another Element at a certain index in the array?\n");
             printf("Type Y or N\n");       
@@ -89,10 +89,11 @@ void main(){
             array_edit = fgetc(stdin);
         }
 
+        
     }
     
     if(out_scanmode == 1){
-        sequence_fill(dynamic_array);
+        sequence_fill(dynamic_array, &size);
     }
 
 
@@ -125,8 +126,8 @@ int size_index_comparator(int*size, int*index){
 }
 
 
-void sequence_fill(int*_array){
-    int size_array = log2(sizeof(_array));
+void sequence_fill(int*_array, int *size){
+    int size_array = *size;
     for(int i = 0; i < size_array; i++){
          printf("Index: %d\n", i);
             int c;
@@ -142,8 +143,8 @@ void sequence_fill(int*_array){
 
 }
 
-void local_fill(int*_array, int*index){
-    int size_array = log2(sizeof(_array));
+void local_fill(int*_array, int*index, int*size){
+    int size_array = *size;
     int i = *index;
     int c;
     char array_edit;
