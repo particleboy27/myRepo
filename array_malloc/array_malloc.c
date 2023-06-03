@@ -20,7 +20,7 @@ void main(){
     //printf("Here is your array!\n");
     printf("All Elements of the array has now been set to zero\n");
 
-    for(int index = 0; index < size; index++){                  //make every element of the array zero
+    for(index = 0; index < size; index++){                  //make every element of the array zero
         dynamic_array[index] = 0;
         //printf("[%d]\n", dynamic_array[index]);
     }
