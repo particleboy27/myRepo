@@ -12,10 +12,10 @@ void main(){
     if (pfile == NULL){ 
     printf("File does not exist\n");
     }
-
+    
 
     fclose(pfile);
-    
+
     gettimeofday(&end, NULL);
     double time_taken = end.tv_sec + end.tv_usec / 1e6 -
                         start.tv_sec - start.tv_usec / 1e6; // in seconds
