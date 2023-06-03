@@ -31,10 +31,6 @@ void main(){
     for(int j = 0; j > size; j++){
         callories_elf_list[j] = 0;
     }
-    
-    //fgets(ch, 20, pfile);
-    //printf(ch);
-    //printf("\n%d", num_ch);
 
     index_ch = 0;
     count_elf = 0;
@@ -48,15 +44,12 @@ void main(){
             index_ch++;                                 //next index for the array
 
 
-        }else if(i_ch == '\n' || i_ch == EOF) {                                         //if encounter a newline
+        }else if(i_ch == '\n') {                        //if encounter a newline
             num_ch = atoi(ch);                          //convert character array to int
             if(num_ch != 0){   
                 tot_callories = tot_callories + num_ch;                        
-                //printf("%d", num_ch);
-                //printf(" - %d\n", tot_callories);
             }else {
                 count_elf++;
-                //printf("%dth elf\n", count_elf);
                 callories_elf_list[index_elf] = tot_callories;
                 tot_callories = 0;
                 index_elf++;
@@ -70,16 +63,11 @@ void main(){
     } while(i_ch != EOF);
 
     count_elf++;
-    //printf("%dth elf\n", count_elf);
-    callories_elf_list[index_elf] = tot_callories;
+    callories_elf_list[index_elf] = tot_callories;      //with the last \n = EOF so it didn't go to else clause
+    
     fclose(pfile);
-    printf("total number of elves: %d\n", count_elf);
 
-    
-    //for(int s = 0; s < count_elf; s++){
-    //   printf("%dth elf carries %d Callories\n", (s+1), callories_elf_list[s]);
-    //}
-    
+    /* compare function, i suppose to write this as function lol*/
     for (int t = 0; t < count_elf; t++) {
         if (callories_elf_list[t] > max_callories) {
             third_max = second_max; 
