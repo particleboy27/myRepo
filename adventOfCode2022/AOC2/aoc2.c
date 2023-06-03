@@ -15,7 +15,6 @@ void main(){
 
 
     fclose(pfile);
-
     
     gettimeofday(&end, NULL);
     double time_taken = end.tv_sec + end.tv_usec / 1e6 -
