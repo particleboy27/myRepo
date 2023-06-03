@@ -43,9 +43,9 @@ void main(){
     //printf("outscanmode is %d\n", out_scanmode);
 
     if(out_scanmode == 0){
-        array_edit = 0;
+        array_edit = 'y';
         
-        while(array_edit == 'y'|| array_edit == 'Y' || array_edit == 0){
+        while(array_edit == 'y'|| array_edit == 'Y'){
             printf("Please Enter the index.\nMax Index: %d\n", size - 1);
 
             while((c = getchar()) != '\n' && c != EOF){}   
