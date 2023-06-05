@@ -1,0 +1,1 @@
+Writing codes solution for advent of code 2022. my solution can be the messiest solution that can be but im sure they work.
