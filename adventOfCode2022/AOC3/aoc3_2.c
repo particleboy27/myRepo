@@ -118,7 +118,7 @@ char find_common_char(char* char_array1, char *char_array2, char *char_array3){
                 common_12[l] = char_array1[i];      //put common in an array common_12
                 l++;
             }
-            if(char_array2[j] == '\0'){
+            if(char_array2[j] == '\0'){            //if the array arrives at \0, counter = max
                 j = size;
             }
             
