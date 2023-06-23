@@ -63,28 +63,47 @@ void main(){
         }
 
     }
-
+    
     // at this point, all the necessary elements (letters and spaces) are in the stack
     // i need to orient them to another array of string oriented stack
 
     // for(int k = 0; k<= stack_index_max; k++){
     //     printf("%s\n", stack[k]);
     // }
+    for(int i = 0; i < 8; i++){
+    printf("%s\n", stack[i]);   // test if my oriented array works
+    }
+
+    for(int t = 0; t < 9; t++){
+    int r = 7;
+    int s = 0;
+     while(r != -1){
+      oriented_stack[t][s]= stack[r][t];
+       r--;
+       s++;
+      }
+      for(int u = s; u <= o_size_stack_max; u++){
+      oriented_stack[t][u] = '\0';
+      }
+    }
+
+    printf("\n");
+    for(stack_index = 0; stack_index <= stack_index_max; stack_index++ ){
+        free(stack[stack_index]);
+    }
+    free(stack);
+
+    for(int i = 0; i < 9; i++){
+    printf("%s\n", oriented_stack[i]);   // test if my oriented array works
+    }
+
     
-    //printf("%s\n", oriented_stack[3]);   // test if my oriented array works
 
-
-    /* Free the stacks*/
     for(stack_index = 0; stack_index <= stack_index_max; stack_index++ ){
         free(oriented_stack[stack_index]);
     }
     free(oriented_stack);
 
-    for(stack_index = 0; stack_index <= stack_index_max; stack_index++ ){
-        free(stack[stack_index]);
-    }
-    free(stack);
-    /*Free the stacks*/
 
     fclose(pfile);
 
